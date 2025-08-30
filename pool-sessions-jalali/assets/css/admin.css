@@ -1,0 +1,504 @@
+/**
+ * Pool Sessions Jalali - Admin Styles
+ * 
+ * Admin page styling and form enhancements
+ */
+
+/* Admin page container */
+.pool-sessions-dashboard {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    margin-top: 24px;
+}
+
+.pool-sessions-stats,
+.pool-sessions-shortcode {
+    background: #fff;
+    padding: 24px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Statistics grid */
+.pool-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 16px;
+    margin-top: 16px;
+}
+
+.pool-stat-item {
+    text-align: center;
+    padding: 16px;
+    background: #f8f9fa;
+    border-radius: 8px;
+    border: 1px solid #dee2e6;
+}
+
+.pool-stat-number {
+    display: block;
+    font-size: 24px;
+    font-weight: 700;
+    color: #0073aa;
+    margin-bottom: 8px;
+}
+
+.pool-stat-label {
+    font-size: 14px;
+    color: #6c757d;
+    font-weight: 500;
+}
+
+/* Shortcode section */
+.pool-sessions-shortcode code {
+    display: inline-block;
+    background: #f8f9fa;
+    padding: 8px 12px;
+    border-radius: 4px;
+    border: 1px solid #dee2e6;
+    font-family: 'Courier New', monospace;
+    font-size: 14px;
+    color: #d63384;
+}
+
+.pool-sessions-shortcode ul {
+    margin: 16px 0;
+    padding-left: 20px;
+}
+
+.pool-sessions-shortcode li {
+    margin: 8px 0;
+    line-height: 1.5;
+}
+
+/* Services management */
+.pool-services-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+    margin-top: 24px;
+}
+
+.pool-services-form,
+.pool-services-list {
+    background: #fff;
+    padding: 24px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.pool-services-form h2,
+.pool-services-list h2 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    color: #333;
+    font-size: 20px;
+}
+
+/* Service form */
+#pool-service-form .form-table th {
+    width: 120px;
+    padding: 16px 10px 16px 0;
+}
+
+#pool-service-form .form-table td {
+    padding: 16px 10px;
+}
+
+#pool-service-form input[type="text"],
+#pool-service-form input[type="color"] {
+    width: 100%;
+    max-width: 300px;
+}
+
+#pool-service-form input[type="color"] {
+    height: 40px;
+    padding: 4px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+/* Services list table */
+.pool-services-list table {
+    margin-top: 16px;
+}
+
+.pool-services-list th {
+    font-weight: 600;
+    color: #333;
+}
+
+.pool-services-list td {
+    vertical-align: middle;
+}
+
+.pool-services-list .button {
+    margin-right: 8px;
+}
+
+.pool-services-list .button:last-child {
+    margin-right: 0;
+}
+
+/* Import/Export section */
+.pool-import-export-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+    margin-top: 24px;
+}
+
+.pool-import-section,
+.pool-export-section {
+    background: #fff;
+    padding: 24px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.pool-import-section h2,
+.pool-export-section h2 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    color: #333;
+    font-size: 20px;
+}
+
+.pool-import-section h3 {
+    margin-top: 24px;
+    margin-bottom: 16px;
+    color: #555;
+    font-size: 16px;
+}
+
+/* File upload styling */
+.pool-import-section input[type="file"] {
+    padding: 8px;
+    border: 2px dashed #ddd;
+    border-radius: 8px;
+    background: #f8f9fa;
+    width: 100%;
+    max-width: 400px;
+}
+
+.pool-import-section input[type="file"]:hover {
+    border-color: #0073aa;
+    background: #f0f8ff;
+}
+
+/* File info display */
+.file-info {
+    margin-top: 8px;
+    padding: 8px 12px;
+    background: #e7f3ff;
+    border: 1px solid #b3ddff;
+    border-radius: 4px;
+    color: #174766;
+    font-size: 14px;
+}
+
+/* Import progress */
+.import-progress {
+    margin-top: 16px;
+    padding: 16px;
+    border-radius: 8px;
+    border-left: 4px solid;
+}
+
+.import-progress.notice-info {
+    border-left-color: #0073aa;
+    background: #e7f3ff;
+    color: #174766;
+}
+
+.import-progress.notice-success {
+    border-left-color: #00a32a;
+    background: #edfaef;
+    color: #0a4b1e;
+}
+
+.import-progress.notice-error {
+    border-left-color: #d63638;
+    background: #fcf0f1;
+    color: #6b1e3a;
+}
+
+/* Settings form enhancements */
+.form-table th {
+    font-weight: 600;
+    color: #333;
+}
+
+.form-table td {
+    padding: 16px 10px;
+}
+
+.form-table input[type="text"],
+.form-table input[type="number"],
+.form-table select {
+    width: 100%;
+    max-width: 300px;
+}
+
+.form-table input[type="color"] {
+    width: 80px;
+    height: 40px;
+    padding: 4px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.form-table textarea {
+    width: 100%;
+    max-width: 500px;
+    min-height: 100px;
+}
+
+/* Color picker enhancements */
+.color-picker-container {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.color-preview {
+    width: 40px;
+    height: 40px;
+    border: 2px solid #ddd;
+    border-radius: 4px;
+    background: #f8f9fa;
+}
+
+/* Responsive design */
+@media (max-width: 1200px) {
+    .pool-sessions-dashboard,
+    .pool-services-container,
+    .pool-import-export-container {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+}
+
+@media (max-width: 768px) {
+    .pool-stats-grid {
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+        gap: 12px;
+    }
+    
+    .pool-stat-number {
+        font-size: 20px;
+    }
+    
+    .pool-stat-label {
+        font-size: 12px;
+    }
+    
+    .pool-services-form .form-table th,
+    .pool-services-form .form-table td {
+        display: block;
+        width: 100%;
+        padding: 8px 0;
+    }
+    
+    .pool-services-form .form-table th {
+        padding-bottom: 4px;
+        font-weight: 600;
+    }
+    
+    .form-table th,
+    .form-table td {
+        display: block;
+        width: 100%;
+        padding: 8px 0;
+    }
+    
+    .form-table th {
+        padding-bottom: 4px;
+        font-weight: 600;
+    }
+    
+    .form-table input[type="text"],
+    .form-table input[type="number"],
+    .form-table select,
+    .form-table textarea {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .pool-sessions-dashboard,
+    .pool-services-container,
+    .pool-import-export-container {
+        margin-top: 16px;
+    }
+    
+    .pool-sessions-stats,
+    .pool-services-form,
+    .pool-services-list,
+    .pool-import-section,
+    .pool-export-section {
+        padding: 16px;
+    }
+    
+    .pool-stats-grid {
+        grid-template-columns: 1fr;
+        gap: 8px;
+    }
+    
+    .pool-stat-item {
+        padding: 12px;
+    }
+    
+    .pool-stat-number {
+        font-size: 18px;
+    }
+    
+    .pool-stat-label {
+        font-size: 11px;
+    }
+}
+
+/* Button styling */
+.button {
+    border-radius: 4px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.button:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.button-primary {
+    background: #0073aa;
+    border-color: #0073aa;
+}
+
+.button-primary:hover {
+    background: #005a87;
+    border-color: #005a87;
+}
+
+.button-secondary {
+    background: #6c757d;
+    border-color: #6c757d;
+}
+
+.button-secondary:hover {
+    background: #5a6268;
+    border-color: #5a6268;
+}
+
+/* Notice styling */
+.notice {
+    border-radius: 8px;
+    border-left: 4px solid;
+    margin: 16px 0;
+}
+
+.notice-info {
+    border-left-color: #0073aa;
+    background: #e7f3ff;
+    color: #174766;
+}
+
+.notice-success {
+    border-left-color: #00a32a;
+    background: #edfaef;
+    color: #0a4b1e;
+}
+
+.notice-error {
+    border-left-color: #d63638;
+    background: #fcf0f1;
+    color: #6b1e3a;
+}
+
+.notice-warning {
+    border-left-color: #d97706;
+    background: #fef3c7;
+    color: #92400e;
+}
+
+/* Form validation */
+.form-table input:invalid,
+.form-table select:invalid,
+.form-table textarea:invalid {
+    border-color: #d63638;
+    box-shadow: 0 0 0 1px #d63638;
+}
+
+.form-table input:focus,
+.form-table select:focus,
+.form-table textarea:focus {
+    border-color: #0073aa;
+    box-shadow: 0 0 0 1px #0073aa;
+    outline: none;
+}
+
+/* Loading states */
+.loading {
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+.loading::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 20px;
+    height: 20px;
+    margin: -10px 0 0 -10px;
+    border: 2px solid #f3f3f3;
+    border-top: 2px solid #0073aa;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Accessibility improvements */
+.screen-reader-text {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    .button {
+        border-width: 2px;
+    }
+    
+    .form-table input,
+    .form-table select,
+    .form-table textarea {
+        border-width: 2px;
+    }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+    .button,
+    .loading::after {
+        transition: none;
+        animation: none;
+    }
+    
+    .button:hover {
+        transform: none;
+        box-shadow: none;
+    }
+}
