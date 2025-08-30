@@ -1,0 +1,470 @@
+/**
+ * Pool Sessions Jalali - Frontend Styles
+ * 
+ * Responsive calendar styling with Jalali calendar support
+ */
+
+/* CSS Variables for dynamic theming */
+:root {
+    --male-bg: #e6f3ff;
+    --male-bd: #b3ddff;
+    --male-tx: #174766;
+    --female-bg: #ffe6f0;
+    --female-bd: #ffc2d6;
+    --female-tx: #6b1e3a;
+    --font-size-title: 16px;
+    --font-size-event: 14px;
+    --border-radius: 8px;
+    --spacing: 12px;
+}
+
+/* Dark mode variables */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --male-bg: #1a3a4a;
+        --male-bd: #2d5a6a;
+        --male-tx: #e6f3ff;
+        --female-bg: #4a1a3a;
+        --female-bd: #6a2d5a;
+        --female-tx: #ffe6f0;
+    }
+}
+
+/* Container styles */
+#pool-calendar-container {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: var(--spacing);
+    direction: rtl;
+}
+
+/* Calendar controls */
+.pool-calendar-controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing);
+    margin-bottom: var(--spacing);
+    padding: var(--spacing);
+    background: #fff;
+    border-radius: var(--border-radius);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Gender toggle */
+.gender-toggle {
+    display: flex;
+    gap: 8px;
+}
+
+.gender-btn {
+    padding: 8px 16px;
+    border: 2px solid #ddd;
+    background: #fff;
+    color: #333;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: var(--font-size-event);
+    font-weight: 500;
+}
+
+.gender-btn:hover {
+    border-color: #0073aa;
+    color: #0073aa;
+}
+
+.gender-btn.active {
+    background: #0073aa;
+    border-color: #0073aa;
+    color: #fff;
+}
+
+/* Service selector */
+.service-selector select {
+    padding: 8px 12px;
+    border: 2px solid #ddd;
+    border-radius: var(--border-radius);
+    font-size: var(--font-size-event);
+    min-width: 150px;
+}
+
+/* Date selector */
+.date-selector {
+    display: flex;
+    gap: 8px;
+}
+
+.date-selector select {
+    padding: 8px 12px;
+    border: 2px solid #ddd;
+    border-radius: var(--border-radius);
+    font-size: var(--font-size-event);
+}
+
+/* Calendar container */
+#pool-calendar {
+    background: #fff;
+    border-radius: var(--border-radius);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+/* FullCalendar customization */
+.fc {
+    font-family: inherit;
+    direction: rtl;
+}
+
+.fc-header-toolbar {
+    padding: var(--spacing);
+    background: #f8f9fa;
+    border-bottom: 1px solid #dee2e6;
+}
+
+.fc-toolbar-title {
+    font-size: var(--font-size-title);
+    font-weight: 600;
+    color: #333;
+}
+
+.fc-button {
+    background: #0073aa;
+    border-color: #0073aa;
+    color: #fff;
+    border-radius: var(--border-radius);
+    padding: 8px 16px;
+    font-size: var(--font-size-event);
+    transition: all 0.3s ease;
+}
+
+.fc-button:hover {
+    background: #005a87;
+    border-color: #005a87;
+}
+
+.fc-button:focus {
+    box-shadow: 0 0 0 2px rgba(0, 115, 170, 0.3);
+}
+
+.fc-button-active {
+    background: #005a87;
+    border-color: #005a87;
+}
+
+/* Calendar grid */
+.fc-daygrid-day {
+    border: 1px solid #dee2e6;
+}
+
+.fc-daygrid-day-number {
+    font-size: var(--font-size-event);
+    color: #333;
+    padding: 4px;
+}
+
+.fc-daygrid-day.fc-day-today {
+    background: rgba(0, 115, 170, 0.1);
+}
+
+/* Event styling */
+.fc-event {
+    border-radius: 4px;
+    border: 2px solid;
+    padding: 2px 6px;
+    margin: 1px 0;
+    font-size: var(--font-size-event);
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.fc-event:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Gender-based event colors */
+.fc-event.male {
+    background: var(--male-bg);
+    border-color: var(--male-bd);
+    color: var(--male-tx);
+}
+
+.fc-event.female {
+    background: var(--female-bg);
+    border-color: var(--female-bd);
+    color: var(--female-tx);
+}
+
+/* Event title */
+.fc-event-title {
+    font-weight: 600;
+}
+
+/* Loading state */
+#pool-calendar.loading {
+    position: relative;
+    min-height: 400px;
+}
+
+#pool-calendar.loading::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 40px;
+    height: 40px;
+    margin: -20px 0 0 -20px;
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid #0073aa;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .pool-calendar-controls {
+        flex-direction: column;
+        gap: 16px;
+    }
+    
+    .gender-toggle {
+        justify-content: center;
+    }
+    
+    .date-selector {
+        justify-content: center;
+    }
+    
+    .fc-header-toolbar {
+        flex-direction: column;
+        gap: 16px;
+    }
+    
+    .fc-toolbar-chunk {
+        display: flex;
+        justify-content: center;
+    }
+    
+    .fc-button {
+        padding: 6px 12px;
+        font-size: 12px;
+    }
+    
+    .fc-toolbar-title {
+        font-size: 18px;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    #pool-calendar-container {
+        padding: 8px;
+    }
+    
+    .pool-calendar-controls {
+        padding: 16px;
+    }
+    
+    .gender-btn {
+        padding: 6px 12px;
+        font-size: 12px;
+    }
+    
+    .service-selector select,
+    .date-selector select {
+        padding: 6px 8px;
+        font-size: 12px;
+    }
+    
+    .fc-daygrid-day-number {
+        font-size: 12px;
+        padding: 2px;
+    }
+    
+    .fc-event {
+        font-size: 11px;
+        padding: 1px 4px;
+    }
+}
+
+/* RTL specific adjustments */
+.fc-direction-rtl .fc-button-group > .fc-button {
+    margin-left: 0;
+    margin-right: -1px;
+}
+
+.fc-direction-rtl .fc-daygrid-day.fc-day-today {
+    background: rgba(0, 115, 170, 0.1);
+}
+
+/* Accessibility improvements */
+.fc-event:focus {
+    outline: 2px solid #0073aa;
+    outline-offset: 2px;
+}
+
+.fc-button:focus {
+    outline: 2px solid #0073aa;
+    outline-offset: 2px;
+}
+
+/* Print styles */
+@media print {
+    .pool-calendar-controls {
+        display: none;
+    }
+    
+    #pool-calendar {
+        box-shadow: none;
+        border: 1px solid #000;
+    }
+    
+    .fc-event {
+        border: 1px solid #000;
+        background: #fff !important;
+        color: #000 !important;
+    }
+}
+
+/* Custom scrollbar for webkit browsers */
+.fc-scroller::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+.fc-scroller::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+}
+
+.fc-scroller::-webkit-scrollbar-thumb {
+    background: #c1c1c1;
+    border-radius: 4px;
+}
+
+.fc-scroller::-webkit-scrollbar-thumb:hover {
+    background: #a8a8a8;
+}
+
+/* Event tooltip enhancements */
+.fc-event[title] {
+    position: relative;
+}
+
+.fc-event[title]:hover::after {
+    content: attr(title);
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #333;
+    color: #fff;
+    padding: 8px 12px;
+    border-radius: 4px;
+    font-size: 12px;
+    white-space: nowrap;
+    z-index: 1000;
+    margin-bottom: 8px;
+}
+
+.fc-event[title]:hover::before {
+    content: '';
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 4px solid transparent;
+    border-top-color: #333;
+    z-index: 1000;
+    margin-bottom: 4px;
+}
+
+/* Week number styling */
+.fc-daygrid-week-number {
+    background: #f8f9fa;
+    color: #6c757d;
+    font-weight: 600;
+    text-align: center;
+}
+
+/* More events link */
+.fc-daygrid-more-link {
+    color: #0073aa;
+    font-size: 12px;
+    text-decoration: none;
+}
+
+.fc-daygrid-more-link:hover {
+    text-decoration: underline;
+}
+
+/* List view styling */
+.fc-list-event {
+    padding: 8px;
+    border-radius: 4px;
+    margin: 2px 0;
+}
+
+.fc-list-event-time {
+    font-weight: 600;
+    color: #0073aa;
+}
+
+.fc-list-event-title {
+    font-weight: 500;
+}
+
+/* Event details modal */
+.event-details {
+    padding: 16px;
+}
+
+.event-details h3 {
+    margin: 0 0 16px 0;
+    color: #333;
+    font-size: 18px;
+}
+
+.event-details p {
+    margin: 8px 0;
+    color: #666;
+}
+
+.event-details strong {
+    color: #333;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    .fc-event {
+        border-width: 3px;
+    }
+    
+    .fc-button {
+        border-width: 2px;
+    }
+    
+    .fc-daygrid-day {
+        border-width: 2px;
+    }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+    .fc-event,
+    .fc-button,
+    .gender-btn {
+        transition: none;
+    }
+    
+    #pool-calendar.loading::after {
+        animation: none;
+    }
+}
